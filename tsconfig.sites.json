@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "noEmitOnError": true,
+    "rewriteRelativeImportExtensions": true,
+    "incremental": false,
+    "rootDir": ".",
+    "outDir": ".sites-build"
+  },
+  "include": ["scripts/build-sites.mts", "worker/index.ts"]
+}

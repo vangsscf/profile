@@ -5,7 +5,18 @@ export const profile = {
   resume: "/vagner-caldeira-resume.pdf",
 };
 
-export const experience = [
+export const skills = ["TypeScript", "Node.js", "React", "PostgreSQL", "RabbitMQ", "Redis", "Docker", "Kubernetes", "AWS"];
+
+type Experience = {
+  company: string;
+  title: string;
+  period: string;
+  summary: string;
+  result?: string;
+  stack: string[];
+};
+
+export const experience: Experience[] = [
   {
     company: "Alias Tecnologia",
     title: "Senior Full-Stack Software Engineer",
@@ -48,7 +59,15 @@ export const experience = [
   },
 ];
 
-export const projects = [
+type Project = {
+  title: string;
+  category: string;
+  description: string;
+  icon: "layers" | "card" | "pulse";
+  href?: string;
+};
+
+export const projects: Project[] = [
   {
     title: "Exchange order processing",
     category: "BitcoinToYou",

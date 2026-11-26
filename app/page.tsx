@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { experience, profile, projects } from "./content";
+import CareerChat from "./career-chat";
+import { experience, profile, projects, skills } from "./content";
 import systemsArt from "./systems-art.webp";
 
 const icons = {
@@ -12,7 +13,7 @@ const icons = {
   pulse: <path d="M2 12h5l3-7 4 14 3-7h5"/>,
 };
 
-function Icon({ name }) {
+function Icon({ name }: { name: keyof typeof icons }) {
   return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{icons[name]}</svg>;
 }
 
@@ -25,7 +26,7 @@ function Brand() {
   );
 }
 
-function Tags({ items }) {
+function Tags({ items }: { items: readonly string[] }) {
   return <ul className="tags" aria-label="Technologies">{items.map((item) => <li key={item}>{item}</li>)}</ul>;
 }
 
@@ -40,6 +41,7 @@ export default function Home() {
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#work">Portfolio</a>
+            <a href="#career-chat">AI chat</a>
           </nav>
           <a className="button button-small button-outline header-contact" href="#contact">Get in touch</a>
         </div>
@@ -78,7 +80,7 @@ export default function Home() {
           <div className="about-body">
             <p>My work spans cryptocurrency exchanges, lending platforms, and financial operations. I focus on the backend systems that make those products work, from processing orders and payments to delivering live updates and securing transactions.</p>
             <p>I work across the stack when the problem calls for it. That has meant rethinking how an exchange processes orders, improving deployment reliability, and integrating AI into operational workflows.</p>
-            <Tags items={["TypeScript", "Node.js", "React", "PostgreSQL", "RabbitMQ", "Redis", "Docker", "Kubernetes", "AWS"]} />
+            <Tags items={skills} />
           </div>
         </section>
 
@@ -127,6 +129,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <CareerChat />
 
         <section className="shell contact-wrap" id="contact" aria-labelledby="contact-title">
           <div className="contact">

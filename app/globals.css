@@ -97,6 +97,33 @@ section[id] { scroll-margin-top: 2rem; }
 .project-status, .project-link { margin-top: auto; padding-top: .9rem; color: var(--muted); font-size: .875rem; }
 .project-link { color: var(--accent); text-decoration: underline; text-underline-offset: .2em; }
 
+.career-chat { display: grid; grid-template-columns: .8fr minmax(0, 1.2fr); align-items: start; gap: clamp(1.5rem, 5vw, 4rem); padding-top: 0; }
+.career-chat .section-description { max-width: 26rem; }
+.chat-panel { background: var(--panel); border: 1px solid #46365b; border-radius: 16px; overflow: hidden; }
+.chat-header { display: flex; align-items: center; gap: .75rem; padding: .85rem 1rem; border-bottom: 1px solid var(--line); background: #181322; }
+.chat-header .monogram { flex-shrink: 0; }
+.chat-identity { display: grid; gap: .2rem; margin-right: auto; }
+.chat-identity span { color: var(--muted); font-size: .875rem; }
+.chat-clear, .chat-suggestion { font: inherit; font-size: .875rem; cursor: pointer; }
+.chat-clear { padding: .5rem 0 .5rem .4rem; background: transparent; border: 0; color: var(--accent); white-space: nowrap; }
+.chat-clear:hover:not(:disabled) { text-decoration: underline; }
+.chat-log { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; min-height: 15rem; max-height: 25rem; overflow-y: auto; overscroll-behavior: contain; padding: 1rem; }
+.chat-message { max-width: 92%; padding: .65rem .85rem; border-radius: 10px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.chat-assistant { background: #21192f; border: 1px solid #342b43; }
+.chat-user { align-self: flex-end; color: #160f27; background: var(--accent); }
+.chat-suggestions { display: flex; flex-wrap: wrap; gap: .45rem; }
+.chat-suggestion { padding: .45rem .65rem; background: transparent; color: var(--accent); border: 1px solid #524268; border-radius: 8px; text-align: left; }
+.chat-suggestion:hover { background: #231a35; }
+.chat-feedback { margin: 0 1rem .65rem; color: var(--muted); font-size: .875rem; }
+.chat-error { color: #ffb8c4; }
+.chat-form { display: flex; gap: .6rem; padding: .8rem 1rem; border-top: 1px solid var(--line); }
+.chat-form input { flex: 1; min-width: 0; padding: .65rem .75rem; border-radius: 8px; border: 1px solid #524268; background: var(--bg); color: var(--text); font: inherit; }
+.chat-form input::placeholder { color: var(--muted); }
+.chat-form button { cursor: pointer; }
+.chat-panel :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chat-log:focus-visible { outline-offset: -2px; }
+.chat-panel button:disabled { opacity: .55; cursor: default; }
+
 .contact { position: relative; overflow: hidden; display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; padding: clamp(1.45rem, 5vw, 3.6rem); border: 1px solid #46365b; border-radius: 16px; background: radial-gradient(ellipse at 92% 10%, #33204e, transparent 66%), #171120; }
 .contact h2 { font-size: clamp(2.2rem, 5.4vw, 4.3rem); }
 .contact p:not(.eyebrow) { max-width: 34rem; margin-top: .9rem; color: var(--muted); line-height: 1.65; }
@@ -122,7 +149,7 @@ section[id] { scroll-margin-top: 2rem; }
   .metrics > div + div { border-left: 0; border-top: 1px solid var(--line); }
   .metrics dd { grid-column: 1; grid-row: 1; font-size: 1.65rem; }
   .metrics dt { grid-column: 2; grid-row: 1; }
-  .about, .project-grid { grid-template-columns: 1fr; }
+  .about, .project-grid, .career-chat { grid-template-columns: 1fr; }
   .role { grid-template-columns: 1fr; gap: .5rem; }
   .credentials { grid-template-columns: 1fr; }
   .site-footer { min-height: 88px; }

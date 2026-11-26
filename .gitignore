@@ -1,7 +1,9 @@
 node_modules/
 .next/
+.sites-build/
 .openai/
 out/
+dist/
 next-env.d.ts
 *.tsbuildinfo
 .env*
